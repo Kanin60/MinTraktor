@@ -14,6 +14,7 @@
     padding: 0;
 }
 header{
+    width: 100vw;
     background-color: var(--darkgray);
     padding: 2rem;
 }
@@ -29,16 +30,18 @@ span{
 main{
     max-width: 1100px;
     margin: auto;
+    overflow: hidden;
 }
 #gallery{
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
 .fadeImg{
     display: inline-block;
-    width: 350px;
+    width: 100%;
     opacity: 0;
 }
 
@@ -76,3 +79,20 @@ footer li{
     font-family: var(--p);
     color: var(--white);
 }
+
+@media(max-width: 768px) {
+    #gallery{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+    }
+    footer{
+        height: 350px;
+
+    }
+    footer ul {
+        display: flex;
+        flex-direction: column;
+        max-width: 1100px;
+        list-style: none;
+    }
+};
